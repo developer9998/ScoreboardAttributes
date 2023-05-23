@@ -2,10 +2,6 @@
  <h1>ScoreboardAttributes</h1>
  <a href="https://github.com/developer9998/ScoreboardAttributes/blob/main/LICENSE/">   
  <img src="https://img.shields.io/github/license/developer9998/ScoreboardAttributes?label=License&style=for-the-badge"</img></a>
- <a href="https://github.com/developer9998/ScoreboardAttributes/releases">
- <img src="https://img.shields.io/github/downloads/developer9998/ScoreboardAttributes/total?style=for-the-badge"</img></a>
- <a href="https://github.com/developer9998/ScoreboardAttributes/releases/latest">
- <img src="https://img.shields.io/github/v/release/developer9998/ScoreboardAttributes?style=for-the-badge"</img></a>
  <a href="https://discord.gg/dev9998">
  <img src="https://img.shields.io/discord/989239017511989258?label=dev%27s%20discord&style=for-the-badge"</img></a>
 </div>
