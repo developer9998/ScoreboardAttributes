@@ -40,3 +40,5 @@ To remove an attribute, you will only need the target player.<br>
 PlayerTexts.UnregisterAttribute(Photon.Pun.PhotonNetwork.LocalPlayer);
 // This removes our local player's attribute added in this mod.
 ```
+
+#### *This product is not affiliated with Gorilla Tag or Another Axiom LLC and is not endorsed or otherwise sponsored by Another Axiom LLC. Portions of the materials contained herein are property of Another Axiom LLC. © 2021 Another Axiom LLC.*
