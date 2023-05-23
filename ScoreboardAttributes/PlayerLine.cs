@@ -1,5 +1,4 @@
-﻿using ScoreboardAttributes.Scripts;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,6 +26,8 @@ namespace ScoreboardAttributes
             if (pronounTagObject.TryGetComponent(out attributeText))
             {
                 attributeText.text = "";
+                attributeText.horizontalOverflow = HorizontalWrapMode.Overflow;
+                attributeText.supportRichText = false;
                 attributeText.transform.localPosition = new Vector3(-95.5f, -5.5f, 0f);
                 attributeText.transform.localScale = Vector3.one * 0.35f;
 

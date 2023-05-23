@@ -1,6 +1,5 @@
 ﻿using BepInEx;
 using HarmonyLib;
-using ScoreboardAttributes.Scripts;
 using System.Reflection;
 
 namespace ScoreboardAttributes
