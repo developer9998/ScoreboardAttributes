@@ -14,7 +14,7 @@ namespace ScoreboardAttributes
         public async void Start()
         {
             // Wait for the line to fully initialize
-            float currentTime = Time.time + 3;
+            float currentTime = Time.time + 5;
             while (!baseLine.initialized)
             {
                 if (Time.time >= currentTime) Destroy(this); // If it takes too long, give up
@@ -26,10 +26,13 @@ namespace ScoreboardAttributes
             if (pronounTagObject.TryGetComponent(out attributeText))
             {
                 attributeText.text = "";
-                attributeText.horizontalOverflow = HorizontalWrapMode.Overflow;
+                attributeText.lineSpacing = 0.8f;
                 attributeText.supportRichText = false;
-                attributeText.transform.localPosition = new Vector3(-95.5f, -5.5f, 0f);
-                attributeText.transform.localScale = Vector3.one * 0.35f;
+                attributeText.alignment = TextAnchor.UpperLeft;
+
+                attributeText.transform.localPosition = new Vector3(-80f, -9f, 0f);
+                attributeText.transform.localScale = Vector3.one * 0.32f;
+                (attributeText.transform as RectTransform).sizeDelta = new Vector2(227.5f, 25f);
 
                 // Add to the text list
                 var textList = baseLine.texts.ToList();
