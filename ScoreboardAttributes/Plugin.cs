@@ -7,15 +7,9 @@ namespace ScoreboardAttributes
     [BepInPlugin(PluginInfo.GUID, PluginInfo.Name, PluginInfo.Version)]
     internal class Plugin : BaseUnityPlugin
     {
-        internal Harmony harmonyPatch;
-
         internal void Awake()
         {
-            if (harmonyPatch == null)
-            {
-                harmonyPatch = new Harmony(PluginInfo.GUID);
-                harmonyPatch.PatchAll(Assembly.GetExecutingAssembly());
-            }
+            new Harmony(PluginInfo.GUID).PatchAll(Assembly.GetExecutingAssembly());
         }
 
         internal void AddLocalAttribute(string attribute)

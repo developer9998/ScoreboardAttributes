@@ -11,15 +11,16 @@ namespace ScoreboardAttributes
 
         public Text attributeText;
 
-        public async void Start()
+        public void Start()
         {
             // Wait for the line to fully initialize
-            float currentTime = Time.time + 5;
-            while (!baseLine.initialized)
-            {
-                if (Time.time >= currentTime) Destroy(this); // If it takes too long, give up
-                await Task.Yield();
-            }
+
+            //float currentTime = Time.time + 5;
+            //while (!baseLine.initialized)
+            //{
+            //    if (Time.time >= currentTime) Destroy(this); // If it takes too long, give up
+            //    await Task.Yield();
+            //}
 
             var pronounTagObject = Instantiate(baseLine.playerName.gameObject, baseLine.playerName.transform.parent);
             pronounTagObject.SetActive(true);
@@ -45,7 +46,7 @@ namespace ScoreboardAttributes
 
         public void UpdateLine()
         {
-            attributeText.text = PlayerTexts.GetAttributes(baseLine.linePlayer);
+            attributeText.text = PlayerTexts.GetAttributes(baseLine.playerVRRig.Creator);
             attributeText.color = baseLine.playerName.color;
         }
     }
