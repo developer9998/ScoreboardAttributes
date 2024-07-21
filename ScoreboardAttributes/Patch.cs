@@ -6,7 +6,7 @@ namespace ScoreboardAttributes
     [HarmonyWrapSafe]
     internal class Patch
     {
-        [HarmonyPatch("Start")]
+        [HarmonyPatch("InitializeLine")]
         [HarmonyPostfix]
         internal static void Start(GorillaPlayerScoreboardLine __instance)
         {
