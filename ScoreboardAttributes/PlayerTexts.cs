@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using UnityEngine;
 
 namespace ScoreboardAttributes
 {
@@ -73,14 +74,17 @@ namespace ScoreboardAttributes
 
         public static string GetAttributes(Player player)
         {
-            if (keyValuePairs.ContainsKey(player))
+            if (player != null)
             {
-                if (keyValuePairs.TryGetValue(player, out var attributes) && attributes.Count > 0)
+                if (keyValuePairs.ContainsKey(player))
                 {
-                    List<string> attributeValues = new List<string>();
-                    attributes.ForEach(a => attributeValues.Add(a.AttributeText));
-                    string returnString = attributeValues.Count == 1 ? attributeValues[0] : string.Join(", ", attributeValues);
-                    return returnString.ToUpper();
+                    if (keyValuePairs.TryGetValue(player, out var attributes) && attributes.Count > 0)
+                    {
+                        List<string> attributeValues = new List<string>();
+                        attributes.ForEach(a => attributeValues.Add(a.AttributeText));
+                        string returnString = attributeValues.Count == 1 ? attributeValues[0] : string.Join(", ", attributeValues);
+                        return returnString.ToUpper();
+                    }
                 }
             }
 

@@ -15,12 +15,5 @@ namespace ScoreboardAttributes
                 __instance.gameObject.AddComponent<PlayerLine>().baseLine = __instance;
             }
         }
-
-        //[HarmonyPatch("InitializeLine")]
-        //[HarmonyPostfix]
-        //internal static void InitializeLine()
-        //{
-        //
-        //}
     }
 }
