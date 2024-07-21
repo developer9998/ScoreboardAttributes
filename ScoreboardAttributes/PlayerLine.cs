@@ -33,7 +33,7 @@ namespace ScoreboardAttributes
                 attributeText.alignment = TextAnchor.UpperLeft;
                 if (Chainloader.PluginInfos.ContainsKey("net.rusjj.scoreboardtweaks"))
                 {
-                    attributeText.transform.localPosition = new Vector3(-80f, -9.75f, 0f);
+                    attributeText.transform.localPosition = new Vector3(-70.1f, -7, 0);
                 }
                 else
                 {
