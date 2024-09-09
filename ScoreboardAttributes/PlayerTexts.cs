@@ -14,7 +14,7 @@ namespace ScoreboardAttributes
             public Assembly Assembly;
         }
 
-        public static Dictionary<Player, List<Data>> keyValuePairs = new Dictionary<Player, List<Data>>();
+        public static Dictionary<NetPlayer, List<Data>> keyValuePairs = new Dictionary<NetPlayer, List<Data>>();
 
         public static void UnregisterAttribute(Player player)
         {
@@ -72,7 +72,7 @@ namespace ScoreboardAttributes
             }
         }
 
-        public static string GetAttributes(Player player)
+        public static string GetAttributes(NetPlayer player)
         {
             if (player != null)
             {

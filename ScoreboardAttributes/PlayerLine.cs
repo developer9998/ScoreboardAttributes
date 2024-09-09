@@ -31,14 +31,12 @@ namespace ScoreboardAttributes
                 attributeText.lineSpacing = 0.8f;
                 attributeText.supportRichText = false;
                 attributeText.alignment = TextAnchor.UpperLeft;
+
                 if (Chainloader.PluginInfos.ContainsKey("net.rusjj.scoreboardtweaks"))
-                {
                     attributeText.transform.localPosition = new Vector3(-70.1f, -7, 0);
-                }
                 else
-                {
                     attributeText.transform.localPosition = new Vector3(-80f, -9f, 0f);
-                }
+
                 attributeText.transform.localScale = Vector3.one * 0.32f;
                 (attributeText.transform as RectTransform).sizeDelta = new Vector2(227.5f, 25f);
 
