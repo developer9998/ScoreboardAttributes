@@ -1,6 +1,6 @@
 ﻿namespace ScoreboardAttributes
 {
-    internal class PluginInfo
+    internal class Constants
     {
         public const string GUID = "com.dev.gorillatag.scoreboardattributes";
         public const string Name = "ScoreboardAttributes";

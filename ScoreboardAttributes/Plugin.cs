@@ -1,27 +1,22 @@
 ﻿using BepInEx;
+using BepInEx.Logging;
 using HarmonyLib;
-using System.Reflection;
 
 namespace ScoreboardAttributes
 {
-    [BepInPlugin(PluginInfo.GUID, PluginInfo.Name, PluginInfo.Version)]
+    [BepInPlugin(Constants.GUID, Constants.Name, Constants.Version)]
     internal class Plugin : BaseUnityPlugin
     {
-        internal Harmony harmonyPatch;
+        public static new ManualLogSource Logger;
 
-        internal void Awake()
+        public void Awake()
         {
-            if (harmonyPatch == null)
-            {
-                harmonyPatch = new Harmony(PluginInfo.GUID);
-                harmonyPatch.PatchAll(Assembly.GetExecutingAssembly());
-            }
+            Logger = base.Logger;
+
+            Harmony.CreateAndPatchAll(typeof(Plugin).Assembly, Constants.GUID);
+
+            RoomSystem.LeftRoomEvent += Registry.FilterAttributes;
+            RoomSystem.PlayerLeftEvent += _ => Registry.FilterAttributes();
         }
-
-        internal void AddLocalAttribute(string attribute)
-            => PlayerTexts.RegisterAttribute(attribute, Photon.Pun.PhotonNetwork.LocalPlayer);
-
-        internal void RemoveLocalAttribute()
-            => PlayerTexts.UnregisterAttribute(Photon.Pun.PhotonNetwork.LocalPlayer);
     }
 }
